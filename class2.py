@@ -40,7 +40,21 @@ class PersonalUTN:
             return 21
         else:
             return 30
+        
+    def calcular_aguinaldo(self):
+        aguinaldo = self.sueldo/2
+        return aguinaldo
+    
+    def mostrar_situacion(self):
+        if self.sueldo < 170000:
+            print("Baja")
+        elif self.sueldo < 200000:
+            print("Media")
+        else:
+            print("Alta")
 
 noDocente = PersonalUTN(33000333,"Jorge",1988,2015,150000)
 print(noDocente.calcular_antiguedad())
 print(noDocente.calcular_vacaciones())
+print(noDocente.calcular_aguinaldo())
+print(noDocente.mostrar_situacion())
