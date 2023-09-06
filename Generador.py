@@ -1,3 +1,3 @@
 from random import *
 
-print(randint(16,49))
+print(randint(7,58))
