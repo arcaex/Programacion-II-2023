@@ -5,7 +5,6 @@ class Jugador:
         self.numero = numero
         self.año_ingreso = año_ingreso
 
-
 class Equipo:
     def __init__(self,cantidad_maxima):
         self.lista_jugadores = []
@@ -40,3 +39,11 @@ class Equipo:
     
     def plazas_disponibles(self):
         return self.cantidad_maxima - len(self.lista_jugadores)
+    
+    def jugador_nuevo(self):
+        jugador_viejo = min(self.lista_jugadores,key = lambda x : x.año_ingreso) 
+        jugador_nuevo = max(self.lista_jugadores,key = lambda x : x.año_ingreso)
+        print(f"El jugador más viejo es \n")
+        print(self.mostrar_jugador(jugador_viejo))
+        print(f"El jugador más nuevo es \n")
+        print(self.mostrar_jugador(jugador_nuevo))
