@@ -1,4 +1,4 @@
-from Figura import FiguraGeometrica
+from clases.Figura import FiguraGeometrica
 
 class FiguraRectangulo(FiguraGeometrica):
     def __init__(self):
