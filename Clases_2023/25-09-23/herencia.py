@@ -8,7 +8,7 @@
 #                   -> año_nacimiento()
 
 class Persona:
-    def __init__(self,nombre,apellido,edad,altura,peso):
+    def __init__(self,nombre,apellido,edad,altura=None,peso=None):
         self.nombre = nombre
         self.apellido = apellido
         self.edad = edad
@@ -27,14 +27,15 @@ class Persona:
 
 class Alumno(Persona):
     def __init__(self,nombre,apellido,edad,carrera,matricula,año_ingreso,comision):
-        super().__init__(nombre,apellido,edad,altura=None,peso=None)
-        #del super().altura
-        #del super().peso
+        super().__init__(nombre,apellido,edad,None,None)
         self.carrera = carrera
         self.matricula = matricula
         self.año_ingreso = año_ingreso
         self.comision = comision
         self.notas = []
+
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} - {self.edad} años - {self.carrera} {self.comision} {self.año_ingreso}"
 
     def calcular_promedio(self):
         sumatoria = sum(self.notas)
@@ -49,5 +50,17 @@ class Alumno(Persona):
     
     def cargar_notas(self,nota):
         self.notas.append(nota)
+
+
+alumno1 = Alumno("Maria","Lopez",20,"TUP",1234,2022,"A")
+print(alumno1)
+print(alumno1.antiguedad_carrera(2023))
+alumno1.cargar_notas(6)
+alumno1.cargar_notas(8)
+alumno1.cargar_notas(9)
+print(alumno1.calcular_promedio())
+print(alumno1.año_nacimiento(2023))
+
+
 
 
