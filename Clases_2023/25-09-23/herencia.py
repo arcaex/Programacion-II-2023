@@ -51,7 +51,6 @@ class Alumno(Persona):
     def cargar_notas(self,nota):
         self.notas.append(nota)
 
-
 alumno1 = Alumno("Maria","Lopez",20,"TUP",1234,2022,"A")
 print(alumno1)
 print(alumno1.antiguedad_carrera(2023))
@@ -62,5 +61,9 @@ print(alumno1.calcular_promedio())
 print(alumno1.año_nacimiento(2023))
 
 
-
-
+# Clase Hija de la Clase Persona que se llame AlumnoPrimaria
+# Atributo : Tutor -> Objeto Persona
+# Atributo : Notas
+# Método : mostrar_datos_tutor()
+# Método : año_egreso_primaria() -> 12 años
+# Método : calcular_promedio()
