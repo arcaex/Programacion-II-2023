@@ -5,16 +5,9 @@ class MiVentana(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi("ventana.ui", self)
-
-class MiVentana2(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        uic.loadUi("ventana2.ui", self)
     
 app = QApplication([])
-
 win = MiVentana()
+print(win.cosito.text())
 win.show()
-
-app.exec_()
-
+app.exec()
