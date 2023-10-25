@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>674</width>
+    <height>412</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>29</y>
+      <width>651</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="etiqueta1">
+       <property name="text">
+        <string> Número 1</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="numero1"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="etiqueta2">
+       <property name="text">
+        <string>Número 2</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="numero2"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Tipo de Operación</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="tipo_operacion">
+       <item>
+        <property name="text">
+         <string>Suma</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Resta</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Multiplicación</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>División</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="etiqueta_resultado">
+       <property name="text">
+        <string>Resultado</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="boton_calcular">
+       <property name="text">
+        <string>Calcular</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
