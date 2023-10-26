@@ -18,15 +18,14 @@ class MiVentana(QMainWindow):
         # msg.setIcon(QMessageBox.Icon.Information)
         msg.setIcon(QMessageBox.Icon.Question)
         msg.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No | QMessageBox.StandardButton.Cancel)
-
         respuesta = msg.exec()
 
-        # if respuesta == QMessageBox.Yes:
-        #     print('Se eligio si')
-        # elif respuesta == QMessageBox.No:
-        #     print('Se eligio no')
-        # else:
-        #     print('Se eligio cancelar')
+        if respuesta == QMessageBox.StandardButton.Yes:
+            print('Se eligio si')
+        elif respuesta == QMessageBox.StandardButton.No:
+            print('Se eligio no')
+        else:
+            print('Se eligio cancelar')
 
 
 app = QApplication([])
