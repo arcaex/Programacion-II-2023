@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>443</width>
+    <width>418</width>
     <height>178</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QLabel" name="nombre_label">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>180</x>
       <y>70</y>
       <width>58</width>
       <height>18</height>
@@ -25,6 +25,19 @@
     </property>
     <property name="text">
      <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="boton_hijo">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>100</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Noooo!</string>
     </property>
    </widget>
   </widget>
