@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QApplication
+from PyQt6.QtWidgets import QMainWindow, QApplication, QMessageBox
 from PyQt6 import uic
 
 class MiVentana(QMainWindow):
@@ -12,6 +12,7 @@ class MiVentana(QMainWindow):
     
     def open_window(self):
         self.ventana2.show()
+        self.hide()
 
     #Comunicación con Ventana Hijo
     def edit_label_ventana_2(self):
@@ -25,6 +26,14 @@ class MiVentana2(QMainWindow):
         #Se agrega un atributo que guarda todo la Ventana Padre
         self.padre = padre
 
+    def closeEvent(self,event):
+        confirmacion = QMessageBox.question(self, "confirmacion", "¿Esta seguro que quiere cerrar la aplicación?", QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
+        if confirmacion == QMessageBox.StandardButton.Yes:
+            event.accept()
+            self.padre.show()
+        else:
+            event.ignore()
+        
     #Comunicación con Ventana Padre
     def click_boton(self):
         self.padre.nombre.setText("Hola Mundo!")
