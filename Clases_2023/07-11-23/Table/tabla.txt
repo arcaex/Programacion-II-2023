@@ -1,0 +1,20 @@
+from PyQt6.QtWidgets import QMainWindow, QApplication, QTableWidgetItem
+from PyQt6 import uic
+
+class MiVentana(QMainWindow):
+  def __init__(self):
+    super().__init__()
+    uic.loadUi("tabla.ui", self)
+
+    # self.tabla.currentItemChanged.connect(self.on_current_item_changed)
+    # item = self.tabla.currentItem()
+    # fila = item.row()
+    # texto_item = self.tabla.item(fila, 0).text()
+    # self.tabla.setItem(fila, 0, QTableWidgetItem("Texto"))
+    # self.tabla.removeRow(fila)
+  
+
+app = QApplication([])
+win = MiVentana()
+win.show()
+app.exec()

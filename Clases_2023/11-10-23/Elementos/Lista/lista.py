@@ -11,6 +11,8 @@ class MiVentana(QMainWindow):
         self.lista.itemDoubleClicked.connect(self.on_editar)
         self.quitar.clicked.connect(self.on_quitar)
         self.filtrar.textChanged.connect(self.filtrare)
+        self.quitar_todos.clicked.connect(self.limpiarLista)
+        self.nombre.returnPressed.connect(self.on_agregar)
         self.lista_real = []
 
     def on_agregar(self):
@@ -24,6 +26,9 @@ class MiVentana(QMainWindow):
         for item in self.lista_real:
             if self.filtrar.text() in item:
                 self.lista.addItem(item)
+
+    def limpiarLista(self):
+        self.lista.clear()
             
     def on_editar(self):
         #.currentItem().text() -> Traigo el texto del item seleccionado
