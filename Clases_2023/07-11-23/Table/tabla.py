@@ -10,6 +10,7 @@ class MiVentana(QMainWindow):
         self.boton_quitar.clicked.connect(self.eliminar)
         self.boton_editar.clicked.connect(self.editar)
         self.tabla.currentItemChanged.connect(self.seleccionar)
+        print(self.tabla.currentRow())
 
     def editar(self):
         
@@ -34,6 +35,9 @@ class MiVentana(QMainWindow):
     def agregar(self):
         
         # Creo una fila nueva
+        # .setRowCount cambia la cantidad de filas
+        # .rowCount() me trae la cantidad de filas
+
         self.tabla.setRowCount(self.tabla.rowCount()+1)
         
         # Me traigo los datos para insertar la fila
@@ -41,6 +45,8 @@ class MiVentana(QMainWindow):
         apellido = self.text_apellido.text()
 
         # Inserto los datos en la fila nueva creada
+        # .setItem(fila,columna,texto) 6 filas -> 0,1,2,3,4,5
+
         self.tabla.setItem(self.tabla.rowCount()-1, 0, QTableWidgetItem(nombre))
         self.tabla.setItem(self.tabla.rowCount()-1, 1, QTableWidgetItem(apellido))
 
@@ -49,8 +55,11 @@ class MiVentana(QMainWindow):
         self.text_apellido.setText("")
     
     def eliminar(self):
+        # # .currentRow() - Fila actual seleccionada
         fila_actual = self.tabla.currentRow()
+        # .removeRow(fila) - Elimina la fila pasada como parámetro
         self.tabla.removeRow(fila_actual)
+        # self.tabla.takeItem(self.tabla.currentRow(),self.tabla.currentColumn())
 
 app = QApplication([])
 win = MiVentana()
